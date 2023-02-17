@@ -39,6 +39,13 @@ constexpr double infty<double> = infty<int>;
 template <>
 constexpr long double infty<long double> = infty<int>;
 
+void YES(bool ok = 1) { cout << (ok ? "YES" : "NO") << endl; }
+void NO(bool ok = 1) { YES(!ok); }
+void Yes(bool ok = 1) { cout << (ok ? "Yes" : "No") << endl; }
+void No(bool ok = 1) { Yes(!ok); }
+void yes(bool ok = 1) { cout << (ok ? "yes" : "no") << endl; }
+void no(bool ok = 1) { yes(!ok); }
+
 #if not defined(Liucj_2022)
 #define LOG(...)
 #endif // Liucj_2022
