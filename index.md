@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: alg/monoid/add.hpp
       title: alg/monoid/add.hpp
+    - icon: ':heavy_check_mark:'
+      path: alg/monoid/min.hpp
+      title: alg/monoid/min.hpp
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
@@ -21,6 +24,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: ds/range_add_range_sum.hpp
       title: ds/range_add_range_sum.hpp
+  - name: ds/segtree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: ds/segtree/segtree.hpp
+      title: ds/segtree/segtree.hpp
   verificationCategories:
   - name: test/aoj
     pages:
@@ -35,5 +43,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/example.test.cpp
       title: test/example.test.cpp
+  - name: test/library_checker/datastructure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/library_checker/datastructure/staticrmq_seg.test.cpp
+      title: test/library_checker/datastructure/staticrmq_seg.test.cpp
 layout: toppage
 ---

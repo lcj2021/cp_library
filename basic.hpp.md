@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/range_sum_query.test.cpp
     title: test/aoj/range_sum_query.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library_checker/datastructure/staticrmq_seg.test.cpp
+    title: test/library_checker/datastructure/staticrmq_seg.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -30,7 +33,11 @@ data:
     \ <class T>\nconstexpr T infty = 0;\ntemplate <>\nconstexpr int infty<int> = 1'000'000'000'000'000'000;\n\
     template <>\nconstexpr i128 infty<i128> = i128(infty<int>) * infty<int>;\ntemplate\
     \ <>\nconstexpr double infty<double> = infty<int>;\ntemplate <>\nconstexpr long\
-    \ double infty<long double> = infty<int>;\n\n#if not defined(Liucj_2022)\n#define\
+    \ double infty<long double> = infty<int>;\n\nvoid YES(bool ok = 1) { cout << (ok\
+    \ ? \"YES\" : \"NO\") << endl; }\nvoid NO(bool ok = 1) { YES(!ok); }\nvoid Yes(bool\
+    \ ok = 1) { cout << (ok ? \"Yes\" : \"No\") << endl; }\nvoid No(bool ok = 1) {\
+    \ Yes(!ok); }\nvoid yes(bool ok = 1) { cout << (ok ? \"yes\" : \"no\") << endl;\
+    \ }\nvoid no(bool ok = 1) { yes(!ok); }\n\n#if not defined(Liucj_2022)\n#define\
     \ LOG(...)\n#endif // Liucj_2022\n"
   code: "#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define int long long\n\
     #define i128 __int128\n#define endl \"\\n\"\n#define all(v) (v).begin(), (v).end()\n\
@@ -48,16 +55,22 @@ data:
     \ <>\nconstexpr int infty<int> = 1'000'000'000'000'000'000;\ntemplate <>\nconstexpr\
     \ i128 infty<i128> = i128(infty<int>) * infty<int>;\ntemplate <>\nconstexpr double\
     \ infty<double> = infty<int>;\ntemplate <>\nconstexpr long double infty<long double>\
-    \ = infty<int>;\n\n#if not defined(Liucj_2022)\n#define LOG(...)\n#endif // Liucj_2022\n"
+    \ = infty<int>;\n\nvoid YES(bool ok = 1) { cout << (ok ? \"YES\" : \"NO\") <<\
+    \ endl; }\nvoid NO(bool ok = 1) { YES(!ok); }\nvoid Yes(bool ok = 1) { cout <<\
+    \ (ok ? \"Yes\" : \"No\") << endl; }\nvoid No(bool ok = 1) { Yes(!ok); }\nvoid\
+    \ yes(bool ok = 1) { cout << (ok ? \"yes\" : \"no\") << endl; }\nvoid no(bool\
+    \ ok = 1) { yes(!ok); }\n\n#if not defined(Liucj_2022)\n#define LOG(...)\n#endif\
+    \ // Liucj_2022\n"
   dependsOn: []
   isVerificationFile: false
   path: basic.hpp
   requiredBy: []
-  timestamp: '2023-02-14 20:51:34+08:00'
+  timestamp: '2023-02-17 15:05:15+08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/range_sum_query.test.cpp
   - test/aoj/range_add_query.test.cpp
+  - test/library_checker/datastructure/staticrmq_seg.test.cpp
 documentation_of: basic.hpp
 layout: document
 redirect_from:

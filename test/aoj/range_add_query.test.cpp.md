@@ -41,13 +41,17 @@ data:
     \ <>\nconstexpr int infty<int> = 1'000'000'000'000'000'000;\ntemplate <>\nconstexpr\
     \ i128 infty<i128> = i128(infty<int>) * infty<int>;\ntemplate <>\nconstexpr double\
     \ infty<double> = infty<int>;\ntemplate <>\nconstexpr long double infty<long double>\
-    \ = infty<int>;\n\n#if not defined(Liucj_2022)\n#define LOG(...)\n#endif // Liucj_2022\n\
-    #line 2 \"alg/monoid/add.hpp\"\n\ntemplate <typename X>\nstruct Monoid_Add {\n\
-    \    using value_type = X;\n    static constexpr X op(const X &x, const X &y)\
-    \ noexcept { return x + y; }\n    static constexpr X inverse(const X &x) noexcept\
-    \ { return -x; }\n    static constexpr X power(const X &x, int n) noexcept { return\
-    \ X(n) * x; }\n    static constexpr X unit() noexcept { return X(0); }\n    static\
-    \ constexpr bool commute = true;   // ?\n};\n#line 3 \"ds/fenwicktree/fenwicktree.hpp\"\
+    \ = infty<int>;\n\nvoid YES(bool ok = 1) { cout << (ok ? \"YES\" : \"NO\") <<\
+    \ endl; }\nvoid NO(bool ok = 1) { YES(!ok); }\nvoid Yes(bool ok = 1) { cout <<\
+    \ (ok ? \"Yes\" : \"No\") << endl; }\nvoid No(bool ok = 1) { Yes(!ok); }\nvoid\
+    \ yes(bool ok = 1) { cout << (ok ? \"yes\" : \"no\") << endl; }\nvoid no(bool\
+    \ ok = 1) { yes(!ok); }\n\n#if not defined(Liucj_2022)\n#define LOG(...)\n#endif\
+    \ // Liucj_2022\n#line 2 \"alg/monoid/add.hpp\"\n\ntemplate <typename X>\nstruct\
+    \ Monoid_Add {\n    using value_type = X;\n    static constexpr X op(const X &x,\
+    \ const X &y) noexcept { return x + y; }\n    static constexpr X inverse(const\
+    \ X &x) noexcept { return -x; }\n    static constexpr X power(const X &x, int\
+    \ n) noexcept { return X(n) * x; }\n    static constexpr X unit() noexcept { return\
+    \ X(0); }\n    static constexpr bool commute = true;   // ?\n};\n#line 3 \"ds/fenwicktree/fenwicktree.hpp\"\
     \n\ntemplate <typename Monoid>\nstruct FenwickTree {\n    using G = Monoid;\n\
     \    using E = typename G::value_type;\n    int n;\n    vector<E> dat;\n    E\
     \ total;\n    \n    FenwickTree() {}\n    FenwickTree(int n) { build(n); }\n \
@@ -118,7 +122,7 @@ data:
   isVerificationFile: true
   path: test/aoj/range_add_query.test.cpp
   requiredBy: []
-  timestamp: '2023-02-14 20:51:34+08:00'
+  timestamp: '2023-02-17 15:05:15+08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/range_add_query.test.cpp
