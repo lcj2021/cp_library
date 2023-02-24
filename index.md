@@ -11,7 +11,7 @@ data:
       title: alg/monoid/min.hpp
   - name: .
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: base.hpp
       title: base.hpp
   - name: ds/fenwicktree
@@ -31,15 +31,15 @@ data:
       title: ds/segtree/segtree.hpp
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/base.hpp
       title: graph/base.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/range_to_range_graph.hpp
       title: graph/range_to_range_graph.hpp
   - name: graph/shortest_path
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/shortest_path/01bfs.hpp
       title: graph/shortest_path/01bfs.hpp
     - icon: ':warning:'
@@ -66,7 +66,7 @@ data:
       title: test/library_checker/datastructure/staticrmq_seg.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/1868.test.cpp
       title: test/yukicoder/1868.test.cpp
 layout: toppage
