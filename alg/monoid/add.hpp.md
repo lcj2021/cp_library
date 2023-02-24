@@ -36,13 +36,13 @@ data:
   isVerificationFile: false
   path: alg/monoid/add.hpp
   requiredBy:
-  - ds/range_add_range_sum.hpp
   - ds/fenwicktree/fenwicktree.hpp
+  - ds/range_add_range_sum.hpp
   timestamp: '2023-02-14 20:51:34+08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/range_sum_query.test.cpp
   - test/aoj/range_add_query.test.cpp
+  - test/aoj/range_sum_query.test.cpp
 documentation_of: alg/monoid/add.hpp
 layout: document
 redirect_from:

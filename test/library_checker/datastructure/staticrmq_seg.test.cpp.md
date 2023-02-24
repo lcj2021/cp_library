@@ -5,8 +5,8 @@ data:
     path: alg/monoid/min.hpp
     title: alg/monoid/min.hpp
   - icon: ':heavy_check_mark:'
-    path: basic.hpp
-    title: basic.hpp
+    path: base.hpp
+    title: base.hpp
   - icon: ':heavy_check_mark:'
     path: ds/segtree/segtree.hpp
     title: ds/segtree/segtree.hpp
@@ -21,7 +21,7 @@ data:
     links:
     - https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "#line 1 \"test/library_checker/datastructure/staticrmq_seg.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#line 1 \"basic.hpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#line 1 \"base.hpp\"\
     \n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define int long long\n\
     #define i128 __int128\n#define endl \"\\n\"\n#define all(v) (v).begin(), (v).end()\n\
     #define len(v) unsigned(v.size())\n#define popcountll(x) __builtin_popcountll(x)\n\
@@ -69,19 +69,38 @@ data:
     \        l += size, r += size;\n        while (l < r) {\n            if (l & 1)\
     \  vl = MX::op(vl, dat[l ++]);\n            if (r & 1)  vr = MX::op(dat[-- r],\
     \ vr);\n            l >>= 1, r >>= 1;\n        }\n        return MX::op(vl, vr);\n\
-    \    }\n\n    X prod_all() { return dat[1]; } // [0, n)\n};\n#line 2 \"alg/monoid/min.hpp\"\
-    \n\ntemplate <typename X>\nstruct Monoid_Min {\n    using value_type = X;\n  \
-    \  static constexpr X op(const X &x, const X &y) noexcept { return min(x, y);\
-    \ }\n    static constexpr X unit() noexcept { return infty<X>; }\n    static constexpr\
-    \ bool commute = true;   // ?\n};\n#line 5 \"test/library_checker/datastructure/staticrmq_seg.test.cpp\"\
-    \n\nvoid solve() {\n    int n, q;   cin >> n >> q;\n    vector<int> a(n);\n  \
-    \  for (auto &x : a)   cin >> x;\n    using monoid = Monoid_Min<int>;\n    SegTree<monoid>\
+    \    }\n\n    X prod_all() { return dat[1]; } // [0, n)\n\n    template <typename\
+    \ F>\n    int max_right(F check, int l) {\n        assert(0 <= l && l <= n &&\
+    \ check(MX::unit()));\n        if (l == n) return n;\n        l += size;\n   \
+    \     X sm = MX::unit();\n        do {\n            while (l % 2 == 0) l >>= 1;\
+    \     // \u786E\u4FDD\u5728\u53F3\u513F\u5B50\n            if (!check(MX::op(sm,\
+    \ dat[l]))) {\n                while (l < size) {\n                    l = l *\
+    \ 2;\n                    if (check(MX::op(sm, dat[l]))) { sm = MX::op(sm, dat[l\
+    \ ++]); }\n                }\n                return l - size;\n            }\n\
+    \            sm = MX::op(sm, dat[l ++]); // \u8F6C\u79FB\u5230\u4E0B\u4E00\u4E2A\
+    \u76F8\u90BB\u533A\u95F4\n        } while ((l & l) != l);\n        return n;\n\
+    \    }\n\n    template <typename F>\n    int min_left(F check, int r) {\n    \
+    \    assert(0 <= r && r <= n && check(MX::unit()));\n        if (r == 0) return\
+    \ 0;\n        r += size;\n        X sm = MX::unit();\n        do {\n         \
+    \   -- r;\n            while (r > 1 && (r % 2)) r >>= 1;   // \u786E\u4FDD\u5728\
+    \u5DE6\u513F\u5B50\n            if (!check(MX::op(dat[r], sm))) {\n          \
+    \      while (r < size) {\n                    r = r * 2 + 1;\n              \
+    \      if (check(MX::op(dat[r], sm))) { sm = MX::op(dat[r --], sm); }\n      \
+    \          }\n                return r + 1 - size;\n            }\n          \
+    \  sm = MX::op(dat[r], sm);\n        } while ((r & -r) != r);\n        return\
+    \ 0;\n    }\n};\n#line 2 \"alg/monoid/min.hpp\"\n\ntemplate <typename X>\nstruct\
+    \ Monoid_Min {\n    using value_type = X;\n    static constexpr X op(const X &x,\
+    \ const X &y) noexcept { return min(x, y); }\n    static constexpr X unit() noexcept\
+    \ { return infty<X>; }\n    static constexpr bool commute = true;   // ?\n};\n\
+    #line 5 \"test/library_checker/datastructure/staticrmq_seg.test.cpp\"\n\nvoid\
+    \ solve() {\n    int n, q;   cin >> n >> q;\n    vector<int> a(n);\n    for (auto\
+    \ &x : a)   cin >> x;\n    using monoid = Monoid_Min<int>;\n    SegTree<monoid>\
     \ seg(a);\n\n    while (q --) {\n        int l, r;   cin >> l >> r;  // \u67E5\
     \u8BE2[l, r)\n        cout << seg.prod(l, r) << endl;\n    }\n}\n\nsigned main()\
     \ {\n    ios::sync_with_stdio(false), cin.tie(0);\n    int tt = 1;\n    // cin\
     \ >> tt;\n    while (tt -- ) solve();\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include \"\
-    basic.hpp\"\n#include \"ds/segtree/segtree.hpp\"\n#include \"alg/monoid/min.hpp\"\
+    base.hpp\"\n#include \"ds/segtree/segtree.hpp\"\n#include \"alg/monoid/min.hpp\"\
     \n\nvoid solve() {\n    int n, q;   cin >> n >> q;\n    vector<int> a(n);\n  \
     \  for (auto &x : a)   cin >> x;\n    using monoid = Monoid_Min<int>;\n    SegTree<monoid>\
     \ seg(a);\n\n    while (q --) {\n        int l, r;   cin >> l >> r;  // \u67E5\
@@ -89,13 +108,13 @@ data:
     \ {\n    ios::sync_with_stdio(false), cin.tie(0);\n    int tt = 1;\n    // cin\
     \ >> tt;\n    while (tt -- ) solve();\n    return 0;\n}"
   dependsOn:
-  - basic.hpp
+  - base.hpp
   - ds/segtree/segtree.hpp
   - alg/monoid/min.hpp
   isVerificationFile: true
   path: test/library_checker/datastructure/staticrmq_seg.test.cpp
   requiredBy: []
-  timestamp: '2023-02-17 15:05:15+08:00'
+  timestamp: '2023-02-24 15:59:47+08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library_checker/datastructure/staticrmq_seg.test.cpp

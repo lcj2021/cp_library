@@ -12,8 +12,8 @@ data:
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
-      path: basic.hpp
-      title: basic.hpp
+      path: base.hpp
+      title: base.hpp
   - name: ds/fenwicktree
     pages:
     - icon: ':heavy_check_mark:'
@@ -29,6 +29,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: ds/segtree/segtree.hpp
       title: ds/segtree/segtree.hpp
+  - name: graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/base.hpp
+      title: graph/base.hpp
+    - icon: ':heavy_check_mark:'
+      path: graph/range_to_range_graph.hpp
+      title: graph/range_to_range_graph.hpp
+  - name: graph/shortest_path
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/shortest_path/01bfs.hpp
+      title: graph/shortest_path/01bfs.hpp
+    - icon: ':warning:'
+      path: graph/shortest_path/dijkstra.hpp
+      title: graph/shortest_path/dijkstra.hpp
   verificationCategories:
   - name: test/aoj
     pages:
@@ -48,5 +64,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library_checker/datastructure/staticrmq_seg.test.cpp
       title: test/library_checker/datastructure/staticrmq_seg.test.cpp
+  - name: test/yukicoder
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/1868.test.cpp
+      title: test/yukicoder/1868.test.cpp
 layout: toppage
 ---

@@ -12,12 +12,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library_checker/datastructure/staticrmq_seg.test.cpp
     title: test/library_checker/datastructure/staticrmq_seg.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1868.test.cpp
+    title: test/yukicoder/1868.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"basic.hpp\"\n#include <bits/stdc++.h>\n\nusing namespace\
+  bundledCode: "#line 1 \"base.hpp\"\n#include <bits/stdc++.h>\n\nusing namespace\
     \ std;\n\n#define int long long\n#define i128 __int128\n#define endl \"\\n\"\n\
     #define all(v) (v).begin(), (v).end()\n#define len(v) unsigned(v.size())\n#define\
     \ popcountll(x) __builtin_popcountll(x)\n#define eb emplace_back\n#define stoi\
@@ -63,18 +66,19 @@ data:
     \ // Liucj_2022\n"
   dependsOn: []
   isVerificationFile: false
-  path: basic.hpp
+  path: base.hpp
   requiredBy: []
-  timestamp: '2023-02-17 15:05:15+08:00'
+  timestamp: '2023-02-24 15:59:47+08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/range_sum_query.test.cpp
-  - test/aoj/range_add_query.test.cpp
   - test/library_checker/datastructure/staticrmq_seg.test.cpp
-documentation_of: basic.hpp
+  - test/yukicoder/1868.test.cpp
+  - test/aoj/range_add_query.test.cpp
+  - test/aoj/range_sum_query.test.cpp
+documentation_of: base.hpp
 layout: document
 redirect_from:
-- /library/basic.hpp
-- /library/basic.hpp.html
-title: basic.hpp
+- /library/base.hpp
+- /library/base.hpp.html
+title: base.hpp
 ---

@@ -37,7 +37,26 @@ data:
     \        l += size, r += size;\n        while (l < r) {\n            if (l & 1)\
     \  vl = MX::op(vl, dat[l ++]);\n            if (r & 1)  vr = MX::op(dat[-- r],\
     \ vr);\n            l >>= 1, r >>= 1;\n        }\n        return MX::op(vl, vr);\n\
-    \    }\n\n    X prod_all() { return dat[1]; } // [0, n)\n};\n"
+    \    }\n\n    X prod_all() { return dat[1]; } // [0, n)\n\n    template <typename\
+    \ F>\n    int max_right(F check, int l) {\n        assert(0 <= l && l <= n &&\
+    \ check(MX::unit()));\n        if (l == n) return n;\n        l += size;\n   \
+    \     X sm = MX::unit();\n        do {\n            while (l % 2 == 0) l >>= 1;\
+    \     // \u786E\u4FDD\u5728\u53F3\u513F\u5B50\n            if (!check(MX::op(sm,\
+    \ dat[l]))) {\n                while (l < size) {\n                    l = l *\
+    \ 2;\n                    if (check(MX::op(sm, dat[l]))) { sm = MX::op(sm, dat[l\
+    \ ++]); }\n                }\n                return l - size;\n            }\n\
+    \            sm = MX::op(sm, dat[l ++]); // \u8F6C\u79FB\u5230\u4E0B\u4E00\u4E2A\
+    \u76F8\u90BB\u533A\u95F4\n        } while ((l & l) != l);\n        return n;\n\
+    \    }\n\n    template <typename F>\n    int min_left(F check, int r) {\n    \
+    \    assert(0 <= r && r <= n && check(MX::unit()));\n        if (r == 0) return\
+    \ 0;\n        r += size;\n        X sm = MX::unit();\n        do {\n         \
+    \   -- r;\n            while (r > 1 && (r % 2)) r >>= 1;   // \u786E\u4FDD\u5728\
+    \u5DE6\u513F\u5B50\n            if (!check(MX::op(dat[r], sm))) {\n          \
+    \      while (r < size) {\n                    r = r * 2 + 1;\n              \
+    \      if (check(MX::op(dat[r], sm))) { sm = MX::op(dat[r --], sm); }\n      \
+    \          }\n                return r + 1 - size;\n            }\n          \
+    \  sm = MX::op(dat[r], sm);\n        } while ((r & -r) != r);\n        return\
+    \ 0;\n    }\n};\n"
   code: "#pragma once\n\n// ZKW \u7EBF\u6BB5\u6811\ntemplate <class Monoid>\nstruct\
     \ SegTree {\n    using MX = Monoid;\n    using X = typename MX::value_type;\n\
     \    using value_type = X;\n    vector<X> dat;\n    int n, log, size;\n\n    SegTree()\
@@ -63,12 +82,31 @@ data:
     \        l += size, r += size;\n        while (l < r) {\n            if (l & 1)\
     \  vl = MX::op(vl, dat[l ++]);\n            if (r & 1)  vr = MX::op(dat[-- r],\
     \ vr);\n            l >>= 1, r >>= 1;\n        }\n        return MX::op(vl, vr);\n\
-    \    }\n\n    X prod_all() { return dat[1]; } // [0, n)\n};\n"
+    \    }\n\n    X prod_all() { return dat[1]; } // [0, n)\n\n    template <typename\
+    \ F>\n    int max_right(F check, int l) {\n        assert(0 <= l && l <= n &&\
+    \ check(MX::unit()));\n        if (l == n) return n;\n        l += size;\n   \
+    \     X sm = MX::unit();\n        do {\n            while (l % 2 == 0) l >>= 1;\
+    \     // \u786E\u4FDD\u5728\u53F3\u513F\u5B50\n            if (!check(MX::op(sm,\
+    \ dat[l]))) {\n                while (l < size) {\n                    l = l *\
+    \ 2;\n                    if (check(MX::op(sm, dat[l]))) { sm = MX::op(sm, dat[l\
+    \ ++]); }\n                }\n                return l - size;\n            }\n\
+    \            sm = MX::op(sm, dat[l ++]); // \u8F6C\u79FB\u5230\u4E0B\u4E00\u4E2A\
+    \u76F8\u90BB\u533A\u95F4\n        } while ((l & l) != l);\n        return n;\n\
+    \    }\n\n    template <typename F>\n    int min_left(F check, int r) {\n    \
+    \    assert(0 <= r && r <= n && check(MX::unit()));\n        if (r == 0) return\
+    \ 0;\n        r += size;\n        X sm = MX::unit();\n        do {\n         \
+    \   -- r;\n            while (r > 1 && (r % 2)) r >>= 1;   // \u786E\u4FDD\u5728\
+    \u5DE6\u513F\u5B50\n            if (!check(MX::op(dat[r], sm))) {\n          \
+    \      while (r < size) {\n                    r = r * 2 + 1;\n              \
+    \      if (check(MX::op(dat[r], sm))) { sm = MX::op(dat[r --], sm); }\n      \
+    \          }\n                return r + 1 - size;\n            }\n          \
+    \  sm = MX::op(dat[r], sm);\n        } while ((r & -r) != r);\n        return\
+    \ 0;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: ds/segtree/segtree.hpp
   requiredBy: []
-  timestamp: '2023-02-17 15:05:15+08:00'
+  timestamp: '2023-02-24 15:59:47+08:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library_checker/datastructure/staticrmq_seg.test.cpp

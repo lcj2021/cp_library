@@ -5,8 +5,8 @@ data:
     path: alg/monoid/add.hpp
     title: alg/monoid/add.hpp
   - icon: ':heavy_check_mark:'
-    path: basic.hpp
-    title: basic.hpp
+    path: base.hpp
+    title: base.hpp
   - icon: ':heavy_check_mark:'
     path: ds/fenwicktree/fenwicktree.hpp
     title: ds/fenwicktree/fenwicktree.hpp
@@ -25,7 +25,7 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E
   bundledCode: "#line 1 \"test/aoj/range_add_query.test.cpp\"\n#define PROBLEM \\\n\
     \    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\"\n\n\
-    #line 1 \"basic.hpp\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define\
+    #line 1 \"base.hpp\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define\
     \ int long long\n#define i128 __int128\n#define endl \"\\n\"\n#define all(v) (v).begin(),\
     \ (v).end()\n#define len(v) unsigned(v.size())\n#define popcountll(x) __builtin_popcountll(x)\n\
     #define eb emplace_back\n#define stoi stoll\n\n#define MIN(v) *min_element(all(v))\n\
@@ -105,7 +105,7 @@ data:
     \ bit.sum(x, x + 1) << endl;\n        }\n    }\n}\n\nsigned main() {\n    solve();\n\
     \    return 0;\n}\n"
   code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\"\
-    \n\n#include \"basic.hpp\"\n#include \"ds/range_add_range_sum.hpp\"\n\nvoid solve()\
+    \n\n#include \"base.hpp\"\n#include \"ds/range_add_range_sum.hpp\"\n\nvoid solve()\
     \ {\n    int n, q;   cin >> n >> q;\n    using monoid = Monoid_Add<int>;\n   \
     \ // vector<int> v{1, 2, 3, 4, 5};       // --> {2, 5, 8, 4, 5}\n    RangeAddRangeSum<monoid>\
     \ bit(n);\n    // RangeAddRangeSum<monoid> bit(v);\n    while (q --) {\n     \
@@ -115,14 +115,14 @@ data:
     \ bit.sum(x, x + 1) << endl;\n        }\n    }\n}\n\nsigned main() {\n    solve();\n\
     \    return 0;\n}"
   dependsOn:
-  - basic.hpp
+  - base.hpp
   - ds/range_add_range_sum.hpp
   - ds/fenwicktree/fenwicktree.hpp
   - alg/monoid/add.hpp
   isVerificationFile: true
   path: test/aoj/range_add_query.test.cpp
   requiredBy: []
-  timestamp: '2023-02-17 15:05:15+08:00'
+  timestamp: '2023-02-24 15:59:47+08:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/range_add_query.test.cpp
