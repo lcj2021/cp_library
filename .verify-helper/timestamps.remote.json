@@ -2,6 +2,5 @@
 "test/aoj/range_add_query.test.cpp": "2023-02-24 15:59:47 +0800",
 "test/aoj/range_sum_query.test.cpp": "2023-02-24 15:59:47 +0800",
 "test/example.test.cpp": "2023-02-14 20:51:34 +0800",
-"test/library_checker/datastructure/staticrmq_seg.test.cpp": "2023-02-24 15:59:47 +0800",
-"test/yukicoder/1868.test.cpp": "2023-02-24 15:59:47 +0800"
+"test/library_checker/datastructure/staticrmq_seg.test.cpp": "2023-02-24 15:59:47 +0800"
 }
