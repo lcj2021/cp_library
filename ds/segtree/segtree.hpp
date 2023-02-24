@@ -67,4 +67,45 @@ struct SegTree {
     }
 
     X prod_all() { return dat[1]; } // [0, n)
+
+    template <typename F>
+    int max_right(F check, int l) {
+        assert(0 <= l && l <= n && check(MX::unit()));
+        if (l == n) return n;
+        l += size;
+        X sm = MX::unit();
+        do {
+            while (l % 2 == 0) l >>= 1;     // 确保在右儿子
+            if (!check(MX::op(sm, dat[l]))) {
+                while (l < size) {
+                    l = l * 2;
+                    if (check(MX::op(sm, dat[l]))) { sm = MX::op(sm, dat[l ++]); }
+                }
+                return l - size;
+            }
+            sm = MX::op(sm, dat[l ++]); // 转移到下一个相邻区间
+        } while ((l & l) != l);
+        return n;
+    }
+
+    template <typename F>
+    int min_left(F check, int r) {
+        assert(0 <= r && r <= n && check(MX::unit()));
+        if (r == 0) return 0;
+        r += size;
+        X sm = MX::unit();
+        do {
+            -- r;
+            while (r > 1 && (r % 2)) r >>= 1;   // 确保在左儿子
+            if (!check(MX::op(dat[r], sm))) {
+                while (r < size) {
+                    r = r * 2 + 1;
+                    if (check(MX::op(dat[r], sm))) { sm = MX::op(dat[r --], sm); }
+                }
+                return r + 1 - size;
+            }
+            sm = MX::op(dat[r], sm);
+        } while ((r & -r) != r);
+        return 0;
+    }
 };

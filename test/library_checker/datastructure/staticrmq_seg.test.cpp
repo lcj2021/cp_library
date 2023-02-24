@@ -1,5 +1,5 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
-#include "basic.hpp"
+#include "base.hpp"
 #include "ds/segtree/segtree.hpp"
 #include "alg/monoid/min.hpp"
 

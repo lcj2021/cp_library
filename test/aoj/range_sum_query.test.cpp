@@ -1,7 +1,7 @@
 #define PROBLEM \
     "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
-#include "basic.hpp"
+#include "base.hpp"
 #include "ds/fenwicktree/fenwicktree.hpp"
 
 void solve() {

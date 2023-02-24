@@ -1,7 +1,7 @@
 #define PROBLEM \
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E"
 
-#include "basic.hpp"
+#include "base.hpp"
 #include "ds/range_add_range_sum.hpp"
 
 void solve() {

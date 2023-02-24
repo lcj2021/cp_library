@@ -2,3 +2,6 @@ token.txt
 /.vscode/
 /.verify-helper/*
 commit_cache.txt
+**/*.test
+**/*.in
+**/*.out
