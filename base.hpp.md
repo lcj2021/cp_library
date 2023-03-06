@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_F.test.cpp
+    title: test/aoj/DSL_2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_I.test.cpp
+    title: test/aoj/DSL_2_I.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/range_add_query.test.cpp
     title: test/aoj/range_add_query.test.cpp
   - icon: ':heavy_check_mark:'
@@ -74,6 +80,8 @@ data:
   - test/library_checker/datastructure/staticrmq_seg.test.cpp
   - test/yukicoder/1868.test.cpp
   - test/aoj/range_add_query.test.cpp
+  - test/aoj/DSL_2_I.test.cpp
+  - test/aoj/DSL_2_F.test.cpp
   - test/aoj/range_sum_query.test.cpp
 documentation_of: base.hpp
 layout: document

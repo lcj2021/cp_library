@@ -1,11 +1,25 @@
 ---
 data:
   libraryCategories:
+  - name: alg/acted_monoid
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: alg/acted_monoid/min_assign.hpp
+      title: alg/acted_monoid/min_assign.hpp
+    - icon: ':heavy_check_mark:'
+      path: alg/acted_monoid/sum_assign.hpp
+      title: alg/acted_monoid/sum_assign.hpp
   - name: alg/monoid
     pages:
     - icon: ':heavy_check_mark:'
       path: alg/monoid/add.hpp
       title: alg/monoid/add.hpp
+    - icon: ':heavy_check_mark:'
+      path: alg/monoid/assign.hpp
+      title: alg/monoid/assign.hpp
+    - icon: ':warning:'
+      path: alg/monoid/max.hpp
+      title: alg/monoid/max.hpp
     - icon: ':heavy_check_mark:'
       path: alg/monoid/min.hpp
       title: alg/monoid/min.hpp
@@ -26,6 +40,9 @@ data:
       title: ds/range_add_range_sum.hpp
   - name: ds/segtree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: ds/segtree/lazy_segtree.hpp
+      title: ds/segtree/lazy_segtree.hpp
     - icon: ':heavy_check_mark:'
       path: ds/segtree/segtree.hpp
       title: ds/segtree/segtree.hpp
@@ -48,6 +65,12 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/DSL_2_F.test.cpp
+      title: test/aoj/DSL_2_F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/DSL_2_I.test.cpp
+      title: test/aoj/DSL_2_I.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/range_add_query.test.cpp
       title: test/aoj/range_add_query.test.cpp
